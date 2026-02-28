@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* =========================================
+   Bridge Builders Design Tokens (v0)
+   Edit these first when changing the look.
+   Values are RGB triplets: "R G B"
+========================================= */
+
+:root {
+  /* Core colors */
+  --bg: 255 255 255;
+  --fg: 17 24 39; /* gray-900-ish */
+  --muted: 107 114 128; /* gray-500-ish */
+
+  /* Surfaces */
+  --surface: 249 250 251; /* gray-50-ish */
+  --surface-2: 243 244 246; /* gray-100-ish */
+  --border: 229 231 235; /* gray-200-ish */
+
+  /* Brand */
+  --primary: 37 99 235; /* blue-600-ish */
+  --primary-contrast: 255 255 255;
+
+  /* Shape + depth */
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg: 3 7 18; /* near-slate */
+  --fg: 243 244 246; /* gray-100-ish */
+  --muted: 156 163 175; /* gray-400-ish */
+
+  --surface: 17 24 39; /* slate-900-ish */
+  --surface-2: 15 23 42; /* slightly darker */
+  --border: 55 65 81; /* gray-700-ish */
+
+  --primary: 59 130 246; /* blue-500-ish */
+  --primary-contrast: 255 255 255;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Optional: consistent rounding without hunting classes */
+.rounded-token {
+  border-radius: var(--radius);
+}
+.shadow-token {
+  box-shadow: var(--shadow);
+}

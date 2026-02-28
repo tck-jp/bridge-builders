@@ -1,0 +1,55 @@
+---
+/**
+ * Button.astro
+ * Usage:
+ *  <Button>Label</Button>
+ *  <Button href="/en/about">Link</Button>
+ *  <Button variant="secondary">Secondary</Button>
+ */
+const {
+  href,
+  variant: variantProp = "primary",
+  type = "button",
+  target,
+  rel,
+  disabled = false,
+  class: className = "",
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-950";
+
+const variants = {
+  primary:
+    "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600 disabled:opacity-60 disabled:pointer-events-none",
+  secondary:
+    "border border-gray-300 hover:bg-gray-50 focus:ring-gray-400 dark:border-gray-700 dark:hover:bg-gray-900 disabled:opacity-60 disabled:pointer-events-none",
+  ghost:
+    "hover:bg-gray-100 focus:ring-gray-400 dark:hover:bg-gray-900 disabled:opacity-60 disabled:pointer-events-none",
+} as const;
+
+type Variant = keyof typeof variants;
+
+const isVariant = (v: unknown): v is Variant => typeof v === "string" && v in variants;
+
+const variant: Variant = isVariant(variantProp) ? variantProp : "primary";
+
+// Only use rel when target=_blank and rel wasn't provided
+const computedRel = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
+
+// Compose classes safely
+const variantClass = variants[variant];
+const classes = `${base} ${variantClass} ${className}`.trim();
+---
+
+{
+  href ? (
+    <a class={classes} href={href} target={target} rel={computedRel}>
+      <slot />
+    </a>
+  ) : (
+    <button class={classes} type={type} disabled={disabled}>
+      <slot />
+    </button>
+  )
+}

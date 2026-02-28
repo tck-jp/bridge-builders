@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+const {
+  title = "Bridge Builders",
+  lang = "en",
+  description = "Bridge Builders supports Third Culture Kids (TCKs) through community, training, and resources.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Prevent theme flash -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const shouldDark = stored ? stored === "dark" : prefersDark;
+        if (shouldDark) document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+
+  <body class="min-h-screen bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
+    <slot />
+
+    <script is:inline>
+      window.__setTheme = function (theme) {
+        const isDark = theme === "dark";
+        document.documentElement.classList.toggle("dark", isDark);
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      };
+      window.__toggleTheme = function () {
+        const isDark = document.documentElement.classList.contains("dark");
+        window.__setTheme(isDark ? "light" : "dark");
+      };
+    </script>
+  </body>
+</html>

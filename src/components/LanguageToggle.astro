@@ -1,0 +1,25 @@
+---
+const { lang = "en", path = "/", class: className = "" } = Astro.props;
+
+const otherLang = lang === "en" ? "ja" : "en";
+const otherLabel = lang === "en" ? "日本語" : "English";
+const otherHref = `/${otherLang}${path === "/" ? "/" : path}`;
+
+const classes = [
+  "rounded-md",
+  "border",
+  "border-[rgb(var(--border))]",
+  "bg-[rgb(var(--surface))]",
+  "px-3",
+  "py-2",
+  "text-sm",
+  "hover:bg-[rgb(var(--surface-2))]",
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<a href={otherHref} class={classes}>
+  {otherLabel}
+</a>

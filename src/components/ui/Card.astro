@@ -1,0 +1,23 @@
+---
+/**
+ * Card.astro
+ * Token-based surface component.
+ */
+const { class: className = "" } = Astro.props;
+
+const classes = [
+  "rounded-[var(--radius)]",
+  "border",
+  "border-[rgb(var(--border))]",
+  "bg-[rgb(var(--surface))]",
+  "p-6",
+  "shadow-[var(--shadow)]",
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<div class={classes}>
+  <slot />
+</div>

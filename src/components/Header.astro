@@ -1,0 +1,31 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+import LanguageToggle from "./LanguageToggle.astro";
+
+const { lang = "en", path = "/" } = Astro.props;
+
+const t =
+  lang === "en"
+    ? { home: "Home", about: "About", resources: "Resources", contact: "Contact" }
+    : { home: "ホーム", about: "私たちについて", resources: "リソース", contact: "お問い合わせ" };
+
+const base = `/${lang}`;
+---
+
+<header class="border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))]">
+  <div class="mx-auto flex max-w-5xl items-center justify-between p-4">
+    <a href={`${base}/`} class="font-semibold tracking-tight"> Bridge Builders </a>
+
+    <nav class="hidden items-center gap-5 text-sm md:flex">
+      <a class="hover:underline" href={`${base}/`}>{t.home}</a>
+      <a class="hover:underline" href={`${base}/about`}>{t.about}</a>
+      <a class="hover:underline" href={`${base}/resources`}>{t.resources}</a>
+      <a class="hover:underline" href={`${base}/contact`}>{t.contact}</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <LanguageToggle lang={lang} path={path} />
+      <ThemeToggle label={lang === "en" ? "Toggle theme" : "テーマ切替"} />
+    </div>
+  </div>
+</header>

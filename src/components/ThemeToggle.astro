@@ -1,0 +1,19 @@
+---
+const { label = "Toggle theme", class: className = "" } = Astro.props;
+
+const classes = [
+  "rounded-md",
+  "border",
+  "border-[rgb(var(--border))]",
+  "bg-[rgb(var(--surface))]",
+  "px-3",
+  "py-2",
+  "text-sm",
+  "hover:bg-[rgb(var(--surface-2))]",
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<button type="button" onclick="window.__toggleTheme()" class={classes} aria-label={label}> 🌓 </button>

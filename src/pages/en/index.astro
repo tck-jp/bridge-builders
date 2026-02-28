@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Card from "../../components/ui/Card.astro";
+
+const lang = "en";
+---
+
+<BaseLayout
+  title="Bridge Builders | Home"
+  lang={lang}
+  description="Bridge Builders is a nonprofit supporting Third Culture Kids (TCKs) through community, training, and resources."
+>
+  <header class="border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))]">
+    <div class="mx-auto flex max-w-5xl items-center justify-between p-4">
+      <a href="/en/" class="font-semibold tracking-tight">Bridge Builders</a>
+
+      <nav class="hidden items-center gap-5 text-sm md:flex">
+        <a class="hover:underline" href="/en/about">About</a>
+        <a class="hover:underline" href="/en/resources">Resources</a>
+        <a class="hover:underline" href="/en/contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a
+          href="/ja/"
+          class="rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))] px-3 py-2 text-sm hover:bg-[rgb(var(--surface-2))]"
+        >
+          日本語
+        </a>
+        <button
+          type="button"
+          onclick="window.__toggleTheme()"
+          class="rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))] px-3 py-2 text-sm hover:bg-[rgb(var(--surface-2))]"
+          aria-label="Toggle theme"
+        >
+          🌓
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-5xl p-6">
+    <!-- Hero -->
+    <section class="py-10 md:py-14">
+      <p class="text-sm font-medium text-[rgb(var(--muted))]">Nonprofit • Third Culture Kids</p>
+
+      <h1 class="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
+        Helping TCKs build belonging across cultures.
+      </h1>
+
+      <p class="mt-4 max-w-2xl text-base text-[rgb(var(--muted))]">
+        Bridge Builders supports Third Culture Kids (TCKs) and the adults around them—parents, educators, and
+        organizations—with practical resources, training, and community.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <Button href="/en/resources" variant="primary">Explore resources</Button>
+        <Button href="/en/contact" variant="secondary">Get in touch</Button>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <Card>
+          <h2 class="text-base font-semibold">Resources</h2>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+            Curated guides, articles, and links for TCKs, families, and educators.
+          </p>
+        </Card>
+
+        <Card>
+          <h2 class="text-base font-semibold">Training</h2>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+            Seminars and workshops for schools, communities, and organizations.
+          </p>
+        </Card>
+
+        <Card>
+          <h2 class="text-base font-semibold">Community</h2>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+            Spaces to connect, share stories, and strengthen cross-cultural identity.
+          </p>
+        </Card>
+      </div>
+    </section>
+
+    <!-- What we do -->
+    <section class="border-t border-[rgb(var(--border))] py-10">
+      <h2 class="text-2xl font-semibold tracking-tight">What we do</h2>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <Card>
+          <h3 class="text-lg font-semibold">Seminars & workshops</h3>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+            Practical, research-informed sessions that help adults support TCK well-being and belonging.
+          </p>
+          <div class="mt-4">
+            <Button href="/en/resources" variant="ghost">View upcoming sessions →</Button>
+          </div>
+        </Card>
+
+        <Card>
+          <h3 class="text-lg font-semibold">Partnerships</h3>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+            We collaborate with schools and organizations to build sustainable support systems.
+          </p>
+          <div class="mt-4">
+            <Button href="/en/contact" variant="ghost">Partner with us →</Button>
+          </div>
+        </Card>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-10">
+      <div class="rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6 shadow-[var(--shadow)]">
+        <h2 class="text-2xl font-semibold tracking-tight">Join a training or seminar</h2>
+        <p class="mt-2 max-w-2xl text-sm text-[rgb(var(--muted))]">
+          Browse upcoming offerings and sign up. If you want a private training for your school or organization, contact
+          us.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <Button href="/en/resources" variant="primary">See resources</Button>
+          <Button href="/en/contact" variant="secondary">Request a training</Button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-[rgb(var(--border))]">
+    <div class="mx-auto max-w-5xl p-6 text-sm text-[rgb(var(--muted))]">© Bridge Builders</div>
+  </footer>
+</BaseLayout>

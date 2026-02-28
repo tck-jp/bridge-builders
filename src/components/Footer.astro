@@ -1,0 +1,10 @@
+---
+const { lang = "en" } = Astro.props;
+const text = lang === "en" ? "© Bridge Builders" : "© Bridge Builders";
+---
+
+<footer class="border-t border-[rgb(var(--border))]">
+  <div class="mx-auto max-w-5xl p-6 text-sm text-[rgb(var(--muted))]">
+    {text}
+  </div>
+</footer>

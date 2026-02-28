@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/ui/Button.astro";
+
+const lang = "en";
+const path = "/contact";
+---
+
+<BaseLayout title="Contact | Bridge Builders" lang={lang}>
+  <Header lang={lang} path={path} />
+
+  <main class="mx-auto max-w-5xl p-6">
+    <h1 class="text-3xl font-semibold tracking-tight">Contact</h1>
+    <p class="mt-3 text-gray-700 dark:text-gray-300">
+      Reach out for partnerships, training requests, or general questions.
+    </p>
+
+    <div class="mt-6">
+      <Button href="mailto:hello@bridgebuilders.org" variant="primary">Email us</Button>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
