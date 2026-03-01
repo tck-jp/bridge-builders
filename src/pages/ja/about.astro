@@ -1,0 +1,43 @@
+
+
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Card from "../../components/ui/Card.astro";
+
+const lang = "ja";
+const path = "/about";
+---
+
+<BaseLayout lang={lang}>
+  <Header lang={lang} path={path} />
+
+  <main class="mx-auto max-w-5xl p-6">
+    <h1 class="text-3xl font-semibold tracking-tight">私たちについて</h1>
+    <p class="mt-3 text-[rgb(var(--muted))]">
+      Bridge Builders は、第三文化の子ども（TCK）と、その家族・教育者・支援者が、
+      つながり、学び、成長できる場をつくるためのNPOです。
+      多文化環境で育つ体験を前向きな力に変え、安心して属せるコミュニティを育みます。
+    </p>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <Card>
+        <h2 class="text-lg font-semibold">ミッション</h2>
+        <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+          第三文化の子どもたちが、自分のストーリーを言葉にし、自分らしいアイデンティティを築き、
+          大切な人間関係を育めるよう支援します。
+        </p>
+      </Card>
+
+      <Card>
+        <h2 class="text-lg font-semibold">対象</h2>
+        <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+          TCK本人、保護者、教育者、そして地域の支援者の皆さま。
+        </p>
+      </Card>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

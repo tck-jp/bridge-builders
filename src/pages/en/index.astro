@@ -2,8 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Button from "../../components/ui/Button.astro";
 import Card from "../../components/ui/Card.astro";
-
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 const lang = "en";
+const path = "/";
 ---
 
 <BaseLayout
@@ -11,34 +13,7 @@ const lang = "en";
   lang={lang}
   description="Bridge Builders is a nonprofit supporting Third Culture Kids (TCKs) through community, training, and resources."
 >
-  <header class="border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))]">
-    <div class="mx-auto flex max-w-5xl items-center justify-between p-4">
-      <a href="/en/" class="font-semibold tracking-tight">Bridge Builders</a>
-
-      <nav class="hidden items-center gap-5 text-sm md:flex">
-        <a class="hover:underline" href="/en/about">About</a>
-        <a class="hover:underline" href="/en/resources">Resources</a>
-        <a class="hover:underline" href="/en/contact">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a
-          href="/ja/"
-          class="rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))] px-3 py-2 text-sm hover:bg-[rgb(var(--surface-2))]"
-        >
-          日本語
-        </a>
-        <button
-          type="button"
-          onclick="window.__toggleTheme()"
-          class="rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))] px-3 py-2 text-sm hover:bg-[rgb(var(--surface-2))]"
-          aria-label="Toggle theme"
-        >
-          🌓
-        </button>
-      </div>
-    </div>
-  </header>
+  <Header lang={lang} path={path} />
 
   <main class="mx-auto max-w-5xl p-6">
     <!-- Hero -->
@@ -126,7 +101,5 @@ const lang = "en";
     </section>
   </main>
 
-  <footer class="border-t border-[rgb(var(--border))]">
-    <div class="mx-auto max-w-5xl p-6 text-sm text-[rgb(var(--muted))]">© Bridge Builders</div>
-  </footer>
+  <Footer />
 </BaseLayout>

@@ -7,44 +7,159 @@
 ========================================= */
 
 :root {
-  /* Core colors */
-  --bg: 255 255 255;
-  --fg: 17 24 39; /* gray-900-ish */
-  --muted: 107 114 128; /* gray-500-ish */
+  /* =========================================
+     Neutral palette (near-white, never pure)
+  ========================================= */
+  --neutral-100: 252 254 253; /* #FCFEFD */
+  --neutral-200: 247 250 249; /* #F7FAF9 */
+  --neutral-300: 241 246 244; /* #F1F6F4 */
+  --neutral-400: 220 231 225; /* #DCE7E1 */
+  --neutral-500: 167 182 174; /* #A7B6AE */
+  --neutral-600: 107 122 114; /* #6B7A72 */
+  --neutral-700: 71 81 75; /* #47514B */
+  --neutral-800: 31 41 35; /* #1F2923 */
+  --neutral-900: 11 15 13; /* #0B0F0D */
 
-  /* Surfaces */
-  --surface: 249 250 251; /* gray-50-ish */
-  --surface-2: 243 244 246; /* gray-100-ish */
-  --border: 229 231 235; /* gray-200-ish */
+  /* Forest */
+  --forest-100: 214 247 234;
+  --forest-200: 167 234 207;
+  --forest-300: 110 215 174;
+  --forest-400: 47 183 127;
+  --forest-500: 22 149 99;
+  --forest-600: 18 128 83;
+  --forest-700: 15 107 70;
+  --forest-800: 10 90 58;
+  --forest-900: 0 67 42;
 
-  /* Brand */
-  --primary: 37 99 235; /* blue-600-ish */
-  --primary-contrast: 255 255 255;
+  /* Mint */
+  --mint-100: 204 241 218;
+  --mint-200: 153 227 193;
+  --mint-300: 102 214 168;
+  --mint-400: 51 201 143;
+  --mint-500: 0 188 118;
+  --mint-600: 0 173 109;
+  --mint-700: 0 152 97;
+  --mint-800: 0 125 79;
+  --mint-900: 0 92 58;
 
-  /* Shape + depth */
+  /* Danger */
+  --danger-100: 252 231 231;
+  --danger-200: 254 202 202;
+  --danger-300: 252 165 165;
+  --danger-400: 239 68 68;
+  --danger-500: 220 38 38;
+  --danger-600: 185 28 28;
+  --danger-700: 159 29 29;
+  --danger-800: 127 29 29;
+  --danger-900: 69 10 10;
+
+  /* Alert */
+  --alert-100: 255 247 237;
+  --alert-200: 254 215 170;
+  --alert-300: 253 186 116;
+  --alert-400: 251 146 60;
+  --alert-500: 245 158 11;
+  --alert-600: 217 119 6;
+  --alert-700: 180 83 9;
+  --alert-800: 146 64 14;
+  --alert-900: 120 53 15;
+
+  /* Success */
+  --success-100: 220 252 231;
+  --success-200: 187 247 208;
+  --success-300: 134 239 172;
+  --success-400: 74 222 128;
+  --success-500: 34 197 94;
+  --success-600: 21 128 61;
+  --success-700: 22 101 52;
+  --success-800: 20 83 45;
+  --success-900: 5 46 22;
+
+  /* Info */
+  --info-100: 224 242 254;
+  --info-200: 186 230 253;
+  --info-300: 125 211 252;
+  --info-400: 56 189 248;
+  --info-500: 14 165 233;
+  --info-600: 3 105 161;
+  --info-700: 3 74 130;
+  --info-800: 7 89 133;
+  --info-900: 12 74 110;
+
+  /* Semantic tokens */
+  --bg: var(--neutral-200);
+  --fg: var(--neutral-900);
+  --muted: var(--neutral-700);
+  --surface: var(--neutral-100);
+  --surface-2: var(--neutral-300);
+  --border: var(--neutral-400);
+
+  --primary: var(--forest-900);
+  --primary-hover: var(--forest-800);
+  --primary-contrast: var(--neutral-100);
+
+  --link: var(--forest-800);
+  --link-hover: var(--forest-700);
+  --accent: var(--mint-500);
+  --focus: var(--mint-500);
+
+  --state-danger: var(--danger-600);
+  --state-danger-hover: var(--danger-700);
+  --state-danger-contrast: 255 255 255;
+
+  --state-alert: var(--alert-500);
+  --state-alert-hover: var(--alert-600);
+  --state-alert-contrast: var(--neutral-900);
+
+  --state-success: var(--success-600);
+  --state-success-hover: var(--success-700);
+  --state-success-contrast: var(--neutral-100);
+
+  --state-info: var(--info-600);
+  --state-info-hover: var(--info-700);
+  --state-info-contrast: var(--neutral-100);
+
   --radius: 16px;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08);
+  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 12px 24px rgba(0,0,0,0.08);
 }
 
 .dark {
-  --bg: 3 7 18; /* near-slate */
-  --fg: 243 244 246; /* gray-100-ish */
-  --muted: 156 163 175; /* gray-400-ish */
+  --neutral-100: 242 247 244;
+  --neutral-200: 220 231 225;
+  --neutral-300: 167 182 174;
+  --neutral-400: 107 122 114;
+  --neutral-500: 71 81 75;
+  --neutral-600: 49 59 53;
+  --neutral-700: 31 41 35;
+  --neutral-800: 16 26 20;
+  --neutral-900: 7 16 12;
 
-  --surface: 17 24 39; /* slate-900-ish */
-  --surface-2: 15 23 42; /* slightly darker */
-  --border: 55 65 81; /* gray-700-ish */
+  --bg: var(--neutral-900);
+  --fg: var(--neutral-100);
+  --muted: var(--neutral-300);
+  --surface: 12 26 20;
+  --surface-2: 10 21 17;
+  --border: 31 52 43;
 
-  --primary: 59 130 246; /* blue-500-ish */
-  --primary-contrast: 255 255 255;
+  --primary: var(--mint-500);
+  --primary-hover: var(--mint-400);
+  --primary-contrast: var(--neutral-900);
 
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 18px 40px rgba(0, 0, 0, 0.45);
+  --link: var(--fg);
+  --link-hover: var(--neutral-300);
+  --accent: var(--mint-500);
+  --focus: var(--mint-500);
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 18px 40px rgba(0,0,0,0.45);
 }
 
-/* Optional: consistent rounding without hunting classes */
-.rounded-token {
-  border-radius: var(--radius);
-}
-.shadow-token {
-  box-shadow: var(--shadow);
-}
+.rounded-token { border-radius: var(--radius); }
+.shadow-token { box-shadow: var(--shadow); }
+
+img, svg { image-rendering: auto; }
+
+/* Theme Toggle Icon Colors */
+.icon-sun { color: rgb(var(--alert-500)); }
+.dark .icon-sun { color: rgb(var(--alert-400)); }
+.icon-moon { color: rgb(var(--info-600)); }
+.dark .icon-moon { color: rgb(var(--info-400)); }

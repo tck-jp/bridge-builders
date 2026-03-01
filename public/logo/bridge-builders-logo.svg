@@ -1,0 +1,28 @@
+<svg
+  width="64"
+  height="32"
+  viewBox="0 0 64 32"
+  xmlns="http://www.w3.org/2000/svg"
+  shape-rendering="geometricPrecision"
+>
+  <defs>
+    <linearGradient id="g" x1="0" y1="32" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00432A" />
+      <stop offset="1" stop-color="#00BC76" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer radius = 32
+       Inner radius = 20
+       Thickness = 12px
+       All coordinates are integers
+  -->
+  <path
+    fill="url(#g)"
+    d="M 0 32
+       A 32 32 0 0 1 64 32
+       L 52 32
+       A 20 20 0 0 0 12 32
+       Z"
+  />
+</svg>
