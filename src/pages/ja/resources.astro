@@ -1,0 +1,81 @@
+
+
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Card from "../../components/ui/Card.astro";
+import Button from "../../components/ui/Button.astro";
+
+const lang = "ja";
+const path = "/resources";
+
+const resources = [
+  {
+    title: "TCK基礎研修（オンライン）",
+    description:
+      "第三文化の子ども（TCK）の基礎理解、よくある課題、支援のポイントを学ぶ入門研修です。",
+    meta: "90分・Zoom",
+  },
+  {
+    title: "保護者向けワークショップ",
+    description:
+      "家庭でできる声かけや、学校・コミュニティとの連携のコツを具体例を交えて整理します。",
+    meta: "60分・対面/オンライン",
+  },
+  {
+    title: "教育者向けセミナー",
+    description:
+      "教室での配慮、移動や帰国に伴う移行期の支援、安心感を育む環境づくりを扱います。",
+    meta: "120分・法人/学校向け",
+  },
+];
+---
+
+<BaseLayout lang={lang}>
+  <Header lang={lang} path={path} />
+
+  <main class="mx-auto max-w-5xl p-6">
+    <h1 class="text-3xl font-semibold tracking-tight">リソース</h1>
+    <p class="mt-3 text-[rgb(var(--muted))]">研修やセミナーにお申し込みいただけます。</p>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      {
+        resources.map((r) => (
+          <Card>
+            <div class="flex items-start justify-between gap-4">
+              <h2 class="text-lg font-semibold">{r.title}</h2>
+              <span class="shrink-0 rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--surface-2))] px-3 py-1 text-xs text-[rgb(var(--muted))]">
+                {r.meta}
+              </span>
+            </div>
+            <p class="mt-2 text-sm text-[rgb(var(--muted))]">{r.description}</p>
+            <div class="mt-4">
+              <Button>申し込む</Button>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 max-w-2xl rounded-[var(--radius)] border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6">
+      <h2 class="text-lg font-semibold">最新情報を受け取る</h2>
+      <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+        次回開催や新しい資料の公開情報をメールでお知らせします（準備中）。
+      </p>
+      <form class="mt-4 flex flex-col gap-3 sm:flex-row" method="post">
+        <input
+          type="email"
+          name="email"
+          autocomplete="email"
+          placeholder="example@domain.com"
+          class="w-full flex-1 rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--bg))] px-3 py-2 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
+        />
+        <Button type="submit">登録</Button>
+      </form>
+      <p class="mt-2 text-xs text-[rgb(var(--muted))]">※現在このフォームはデモです。</p>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

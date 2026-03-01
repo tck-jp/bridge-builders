@@ -11,16 +11,45 @@ const t =
 
 const base = `/${lang}`;
 ---
-
-<header class="border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))]">
+<header class="border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
   <div class="mx-auto flex max-w-5xl items-center justify-between p-4">
-    <a href={`${base}/`} class="font-semibold tracking-tight"> Bridge Builders </a>
+    <a href={`${base}/`} class="inline-flex items-center" aria-label="Bridge Builders">
+      <img
+        src="/logo/bridge-builders-logo.svg"
+        alt="Bridge Builders"
+        width="64"
+        height="32"
+        class="h-8 w-auto"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
 
     <nav class="hidden items-center gap-5 text-sm md:flex">
-      <a class="hover:underline" href={`${base}/`}>{t.home}</a>
-      <a class="hover:underline" href={`${base}/about`}>{t.about}</a>
-      <a class="hover:underline" href={`${base}/resources`}>{t.resources}</a>
-      <a class="hover:underline" href={`${base}/contact`}>{t.contact}</a>
+      <a
+        class="text-[rgb(var(--fg))] hover:text-[rgb(var(--muted))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
+        href={`${base}/`}
+      >
+        {t.home}
+      </a>
+      <a
+        class="text-[rgb(var(--fg))] hover:text-[rgb(var(--muted))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
+        href={`${base}/about`}
+      >
+        {t.about}
+      </a>
+      <a
+        class="text-[rgb(var(--fg))] hover:text-[rgb(var(--muted))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
+        href={`${base}/resources`}
+      >
+        {t.resources}
+      </a>
+      <a
+        class="text-[rgb(var(--fg))] hover:text-[rgb(var(--muted))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
+        href={`${base}/contact`}
+      >
+        {t.contact}
+      </a>
     </nav>
 
     <div class="flex items-center gap-2">
