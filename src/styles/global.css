@@ -2,8 +2,6 @@
 
 /* =========================================
    Bridge Builders Design Tokens (v0)
-   Edit these first when changing the look.
-   Values are RGB triplets: "R G B"
 ========================================= */
 
 :root {
@@ -120,7 +118,7 @@
   --state-info-contrast: var(--neutral-100);
 
   --radius: 16px;
-  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 12px 24px rgba(0,0,0,0.08);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
 .dark {
@@ -150,16 +148,57 @@
   --accent: var(--mint-500);
   --focus: var(--mint-500);
 
-  --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 18px 40px rgba(0,0,0,0.45);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
-.rounded-token { border-radius: var(--radius); }
-.shadow-token { box-shadow: var(--shadow); }
+.rounded-token {
+  border-radius: var(--radius);
+}
+.shadow-token {
+  box-shadow: var(--shadow);
+}
 
-img, svg { image-rendering: auto; }
+img,
+svg {
+  image-rendering: auto;
+}
+
+body {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+}
+
+h1, h2, h3 {
+  font-family:
+    ui-serif,
+    "New York",
+    Georgia,
+    "Times New Roman",
+    "Hiragino Mincho ProN",
+    serif;
+}
 
 /* Theme Toggle Icon Colors */
-.icon-sun { color: rgb(var(--alert-500)); }
-.dark .icon-sun { color: rgb(var(--alert-400)); }
-.icon-moon { color: rgb(var(--info-600)); }
-.dark .icon-moon { color: rgb(var(--info-400)); }
+.icon-sun {
+  color: rgb(var(--alert-500));
+}
+.dark .icon-sun {
+  color: rgb(var(--alert-400));
+}
+.icon-moon {
+  color: rgb(var(--info-600));
+}
+.dark .icon-moon {
+  color: rgb(var(--info-400));
+}
