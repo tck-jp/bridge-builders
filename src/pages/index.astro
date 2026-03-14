@@ -1,3 +1,13 @@
 ---
-return Astro.redirect("/en/");
+export const prerender = false;
+
+const preferred = Astro.preferredLocaleList ?? [];
+
+const target = preferred.some((locale) =>
+  locale.toLowerCase().startsWith('ja')
+)
+  ? '/ja/'
+  : '/en/';
+
+return Astro.redirect(target, 302);
 ---
