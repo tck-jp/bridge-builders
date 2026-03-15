@@ -84,6 +84,15 @@
   --info-800: 7 89 133;
   --info-900: 12 74 110;
 
+  /* Typography tokens */
+  --font-sans: "Inter";
+  --leading-body: 1.7;
+  --leading-h1: 1.12;
+  --leading-h2: 1.18;
+  --leading-h3: 1.22;
+  --measure-copy: 65ch;
+  --measure-h1: 28ch;
+
   /* Semantic tokens */
   --bg: var(--neutral-200);
   --fg: var(--neutral-900);
@@ -163,32 +172,6 @@ svg {
   image-rendering: auto;
 }
 
-body {
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Hiragino Sans",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    Meiryo,
-    sans-serif;
-}
-
-h1, h2, h3 {
-  font-family:
-    ui-serif,
-    "New York",
-    Georgia,
-    "Times New Roman",
-    "Hiragino Mincho ProN",
-    serif;
-}
-
 /* Theme Toggle Icon Colors */
 .icon-sun {
   color: rgb(var(--alert-500));
@@ -201,4 +184,44 @@ h1, h2, h3 {
 }
 .dark .icon-moon {
   color: rgb(var(--info-400));
+}
+
+/* Language override for Japanese pages */
+html[lang="ja"] {
+  --font-sans: "Noto Sans JP";
+  --leading-body: 1.9;
+  --leading-h1: 1.22;
+  --leading-h2: 1.28;
+  --leading-h3: 1.32;
+  --measure-copy: 88ch;
+  --measure-h1: 34ch;
+}
+
+/* Japanese text line-breaking (scoped) */
+html[lang="ja"] main {
+  line-break: loose;
+}
+
+html[lang="ja"] main :where(p, li) {
+  word-break: normal;
+}
+
+/* Default body copy leading (scoped to main content) */
+main :where(p, li) {
+  max-width: var(--measure-copy);
+  line-height: var(--leading-body);
+}
+
+/* Default heading leading (scoped to main content) */
+main :where(h1) {
+  max-width: var(--measure-h1);
+  line-height: var(--leading-h1);
+}
+main :where(h2) {
+  max-width: var(--measure-copy);
+  line-height: var(--leading-h2);
+}
+main :where(h3) {
+  max-width: var(--measure-copy);
+  line-height: var(--leading-h3);
 }
