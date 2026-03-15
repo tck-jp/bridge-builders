@@ -15,14 +15,16 @@ const path = "/";
 >
   <Header lang={lang} path={path} />
 
-  <main class="mx-auto max-w-5xl p-6">
+  <main class="mx-auto max-w-5xl px-4 py-6">
     <!-- ヒーロー -->
     <section class="py-10 md:py-14">
-      <p class="text-sm font-medium text-[rgb(var(--muted))]">NPO • サードカルチャーキッズ</p>
+      <p class="text-sm font-medium text-[rgb(var(--muted))]">サードカルチャーキッズ</p>
 
-      <h1 class="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">異文化の間で育つTCKの「居場所」を支える。</h1>
+      <h1 class="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
+        日本で育つTCKが抱える文化の衝突に共に立ち向かう
+      </h1>
 
-      <p class="mt-4 max-w-2xl text-base text-[rgb(var(--muted))]">
+      <p class="mt-4 text-base text-[rgb(var(--muted))]">
         Bridge Buildersは、サードカルチャーキッズ（TCK）と、その周囲の大人（保護者・教育関係者・組織）を対象に、
         実践的なリソース、研修、コミュニティを提供します。
       </p>
@@ -31,68 +33,35 @@ const path = "/";
         <Button href="/ja/resources" variant="primary">リソースを見る</Button>
         <Button href="/ja/contact" variant="secondary">問い合わせる</Button>
       </div>
-
-      <div class="mt-8 grid gap-4 md:grid-cols-3">
-        <Card>
-          <h2 class="text-base font-semibold">リソース</h2>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-            TCK・家族・教育関係者向けのガイドや記事、リンク集。
-          </p>
-        </Card>
-
-        <Card>
-          <h2 class="text-base font-semibold">研修</h2>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-            学校・コミュニティ・組織向けのセミナーやワークショップ。
-          </p>
-        </Card>
-
-        <Card>
-          <h2 class="text-base font-semibold">コミュニティ</h2>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-            つながり、語り合い、健やかなアイデンティティを育む場。
-          </p>
-        </Card>
-      </div>
     </section>
 
-    <!-- 私たちの活動 -->
+    <!-- What we do -->
     <section class="border-t border-[rgb(var(--border))] py-10">
-      <h2 class="text-2xl font-semibold tracking-tight">私たちの活動</h2>
+      <h2 class="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">Bridge Buildersについて</h2>
 
-      <div class="mt-6 grid gap-4 md:grid-cols-2">
-        <Card>
-          <h3 class="text-lg font-semibold">セミナー／ワークショップ</h3>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-            大人がTCKを支えるための、実践的で根拠に基づく内容を提供します。
-          </p>
-          <div class="mt-4">
-            <Button href="/ja/resources" variant="ghost">開催予定を見る →</Button>
-          </div>
-        </Card>
-
-        <Card>
-          <h3 class="text-lg font-semibold">連携・協働</h3>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-            学校や組織と連携し、継続可能な支援の仕組みづくりを行います。
-          </p>
-          <div class="mt-4">
-            <Button href="/ja/contact" variant="ghost">連携の相談 →</Button>
-          </div>
-        </Card>
+      <div class="mt-4 space-y-4 text-base text-[rgb(var(--muted))]">
+        <p>日本は独特の文化を持つ国です。</p>
+        <p>
+          海外で育ち、日本人でありながら日本の文化に馴染めずにいる人。国籍は外国でも、日本で育ち、親の国に戻っても、
+          日本にいても、自分がどこか「外国人」のように感じてしまう人。
+        </p>
+        <p>
+          私たちは、そんな第三文化的背景を持つティーンズと共に、文化の衝突や摩擦に向き合いながら、「自分」として生きていく道のりを
+          共に歩みたいと願っています。
+        </p>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="py-10">
       <div class="rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6 shadow-[var(--shadow)]">
-        <h2 class="text-2xl font-semibold tracking-tight">研修・セミナーに参加する</h2>
-        <p class="mt-2 max-w-2xl text-sm text-[rgb(var(--muted))]">
-          開催予定から申込みできます。学校・組織向けに研修をご希望の場合は、お問い合わせください。
+        <h2 class="text-2xl font-semibold tracking-tight">まずはつながる</h2>
+        <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+          TCKの学生、保護者、教育関係者、支援者の方へ。お気軽にご連絡ください。次のステップ、リソース、関わり方をご案内します。
         </p>
         <div class="mt-5 flex flex-wrap gap-3">
-          <Button href="/ja/resources" variant="primary">リソース一覧</Button>
-          <Button href="/ja/contact" variant="secondary">研修を相談する</Button>
+          <Button href="/ja/resources" variant="primary">リソースを見る</Button>
+          <Button href="/ja/contact" variant="secondary">問い合わせる</Button>
         </div>
       </div>
     </section>
