@@ -53,10 +53,160 @@ const base = `/${lang}`;
         </a>
       </nav>
 
-      <div class="flex items-center gap-2">
+      {/* Desktop toggles */}
+      <div class="hidden items-center gap-2 md:flex">
         <LanguageToggle lang={lang} path={path} />
         <ThemeToggle label={lang === "en" ? "Toggle theme" : "テーマ切替"} />
       </div>
+
+      {/* Mobile controls */}
+      <div class="flex items-center gap-2 md:hidden">
+        <LanguageToggle lang={lang} path={path} />
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--fg))] shadow-[var(--shadow)] transition hover:bg-[rgb(var(--surface-2))] focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))]"
+          aria-label={lang === "en" ? "Open menu" : "メニューを開く"}
+          aria-controls="bb-mobile-menu"
+          aria-expanded="false"
+          data-bb-menu-button
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
+
+  {/* Mobile menu (drawer) */}
+  <div id="bb-mobile-menu" class="fixed inset-0 z-[60] hidden md:hidden" data-bb-menu-root>
+    {/* Backdrop */}
+    <button
+      type="button"
+      class="absolute inset-0 bg-black/40"
+      aria-label={lang === "en" ? "Close menu" : "メニューを閉じる"}
+      data-bb-menu-close
+    ></button>
+
+    {/* Panel */}
+    <div
+      class="absolute right-0 top-0 h-full w-[min(20rem,85vw)] translate-x-full border-l border-[rgb(var(--border))] bg-[rgb(var(--bg))] p-4 shadow-[var(--shadow)] transition-transform duration-200"
+      data-bb-menu-panel
+      role="dialog"
+      aria-modal="true"
+      aria-label={lang === "en" ? "Site menu" : "サイトメニュー"}
+      tabindex="-1"
+    >
+      <div class="flex items-center justify-between">
+        <p class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">Menu</p>
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--fg))] transition hover:bg-[rgb(var(--surface-2))] focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))]"
+          aria-label={lang === "en" ? "Close menu" : "メニューを閉じる"}
+          data-bb-menu-close
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 space-y-2" aria-label={lang === "en" ? "Primary" : "メイン"}>
+        <a class="bb-mobile-link" href={`${base}/`} data-bb-menu-link>{t.home}</a>
+        <a class="bb-mobile-link" href={`${base}/about`} data-bb-menu-link>{t.about}</a>
+        <a class="bb-mobile-link" href={`${base}/staff`} data-bb-menu-link>{t.staff}</a>
+        <a class="bb-mobile-link" href={`${base}/contact`} data-bb-menu-link>{t.contact}</a>
+      </nav>
+
+      <div class="mt-8 border-t border-[rgb(var(--border))] pt-6">
+        <div class="space-y-3">
+          <p class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">Settings</p>
+          <div class="flex items-center justify-between gap-3">
+            <span class="text-sm text-[rgb(var(--muted))]">Language</span>
+            <LanguageToggle lang={lang} path={path} />
+          </div>
+          <div class="flex items-center justify-between gap-3">
+            <span class="text-sm text-[rgb(var(--muted))]">Theme</span>
+            <ThemeToggle label={lang === "en" ? "Toggle theme" : "テーマ切替"} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .bb-mobile-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0.75rem;
+      color: rgb(var(--fg));
+      text-decoration: none;
+      transition: background 150ms ease;
+      border-radius: 0.75rem;
+    }
+
+    .bb-mobile-link:hover {
+      background: rgb(var(--surface-2));
+    }
+
+    .bb-mobile-link:active {
+      background: rgb(var(--surface-2));
+    }
+
+    .bb-mobile-link:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px rgb(var(--focus));
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      const btn = document.querySelector('[data-bb-menu-button]');
+      const root = document.querySelector('[data-bb-menu-root]');
+      const panel = document.querySelector('[data-bb-menu-panel]');
+      const closeBtns = document.querySelectorAll('[data-bb-menu-close]');
+      const links = document.querySelectorAll('[data-bb-menu-link]');
+      if (!btn || !root || !panel) return;
+
+      let isOpen = false;
+
+      function openMenu() {
+        if (isOpen) return;
+        isOpen = true;
+        root.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        // allow layout before transition
+        requestAnimationFrame(() => {
+          panel.classList.remove('translate-x-full');
+          panel.focus();
+        });
+        document.addEventListener('keydown', onKeyDown);
+      }
+
+      function closeMenu() {
+        if (!isOpen) return;
+        isOpen = false;
+        btn.setAttribute('aria-expanded', 'false');
+        panel.classList.add('translate-x-full');
+        document.removeEventListener('keydown', onKeyDown);
+        // wait for transition then hide
+        window.setTimeout(() => {
+          root.classList.add('hidden');
+          btn.focus();
+        }, 200);
+      }
+
+      function onKeyDown(e) {
+        if (e.key === 'Escape') closeMenu();
+      }
+
+      btn.addEventListener('click', () => (isOpen ? closeMenu() : openMenu()));
+      closeBtns.forEach((b) => b.addEventListener('click', closeMenu));
+      links.forEach((a) => a.addEventListener('click', closeMenu));
+    })();
+  </script>
 </header>

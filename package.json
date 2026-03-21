@@ -13,6 +13,7 @@
     "@astrojs/vercel": "^8.0.4",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/noto-sans-jp": "^5.2.9",
+    "@lucide/astro": "^0.577.0",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",
     "tailwindcss": "^4.2.1",

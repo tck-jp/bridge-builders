@@ -30,8 +30,7 @@ const path = "/";
       </p>
 
       <div class="mt-6 flex flex-wrap gap-3">
-        <Button href="/en/resources" variant="primary">Explore resources</Button>
-        <Button href="/en/contact" variant="secondary">Get in touch</Button>
+        <Button href="/en/contact" variant="primary">Get in touch</Button>
       </div>
     </section>
 
@@ -52,22 +51,6 @@ const path = "/";
         </p>
       </div>
     </section>
-
-    <!-- CTA -->
-    <section class="py-10">
-      <div class="rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6 shadow-[var(--shadow)]">
-        <h2 class="text-2xl font-semibold tracking-tight">Join a training or seminar</h2>
-        <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-          Browse upcoming offerings and sign up. If you want a private training for your school or organization, contact
-          us.
-        </p>
-        <div class="mt-5 flex flex-wrap gap-3">
-          <Button href="/en/resources" variant="primary">See resources</Button>
-          <Button href="/en/contact" variant="secondary">Request a training</Button>
-        </div>
-      </div>
-    </section>
   </main>
-
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>

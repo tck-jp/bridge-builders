@@ -295,6 +295,22 @@ main :where(h2, h3) {
   backdrop-filter: blur(2px);
 }
 
+/* Sticky footer layout */
+.bb-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Assumes pages are structured as: Header + <main> + Footer */
+.bb-page > main {
+  flex: 1;
+}
+
+.bb-page .bb-footer {
+  margin-top: auto;
+}
+
 /* Media queries */
 @media (max-width: 767px) {
   .bb-quicklinks-bar {
