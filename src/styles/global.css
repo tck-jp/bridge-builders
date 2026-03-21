@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* =========================================
    Bridge Builders Design Tokens (v0)
 ========================================= */
@@ -90,8 +94,9 @@
   --leading-h1: 1.12;
   --leading-h2: 1.18;
   --leading-h3: 1.22;
-  --measure-copy: 65ch;
+  --measure-copy: 100%;
   --measure-h1: 28ch;
+  --text-body: 1.125rem;
 
   /* Semantic tokens */
   --bg: var(--neutral-200);
@@ -127,6 +132,9 @@
   --state-info-contrast: var(--neutral-100);
 
   --radius: 16px;
+  --header-offset: 64px;
+  --quicklinks-offset: 56px;
+  --anchor-offset: calc(var(--header-offset) + var(--quicklinks-offset) + 16px);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
@@ -193,8 +201,9 @@ html[lang="ja"] {
   --leading-h1: 1.22;
   --leading-h2: 1.28;
   --leading-h3: 1.32;
-  --measure-copy: 88ch;
+  --measure-copy: 100%;
   --measure-h1: 34ch;
+  --text-body: 1.0625rem;
 }
 
 /* Japanese text line-breaking (scoped) */
@@ -209,6 +218,7 @@ html[lang="ja"] main :where(p, li) {
 /* Default body copy leading (scoped to main content) */
 main :where(p, li) {
   max-width: var(--measure-copy);
+  font-size: var(--text-body);
   line-height: var(--leading-body);
 }
 
@@ -224,4 +234,92 @@ main :where(h2) {
 main :where(h3) {
   max-width: var(--measure-copy);
   line-height: var(--leading-h3);
+}
+
+/* Anchor offset for in-page navigation */
+main :where(h2, h3) {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+/* Quicklink chips (About page in-page navigation) */
+.bb-quicklink {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--border));
+  background: rgb(var(--surface));
+  padding: 0.25rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: rgb(var(--fg));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: background-color 150ms ease-out, border-color 150ms ease-out, box-shadow 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+.bb-quicklink:hover {
+  border-color: rgb(var(--muted));
+  background: rgb(var(--surface-2));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.bb-quicklink:active {
+  transform: scale(0.98);
+  background: rgb(var(--surface-2));
+}
+
+.bb-quicklink:focus {
+  outline: none;
+}
+
+.bb-quicklink:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgb(var(--focus)),
+    0 0 0 4px rgb(var(--bg)),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Quicklinks bar (About page) */
+.bb-quicklinks-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--header-offset);
+  z-index: 40;
+  margin-top: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
+  background: rgb(var(--bg) / 0.85);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+  .bb-quicklinks-bar {
+    position: static;
+    top: auto;
+    z-index: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    background: transparent;
+    border-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-quicklink {
+    transition: none;
+  }
+  .bb-quicklink:active {
+    transform: none;
+  }
 }

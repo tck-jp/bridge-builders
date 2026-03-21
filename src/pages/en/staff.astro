@@ -1,0 +1,244 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Card from "../../components/ui/Card.astro";
+import Button from "../../components/ui/Button.astro";
+
+const lang = "en";
+const path = "/staff";
+---
+
+<BaseLayout
+  title="Bridge Builders | Staff"
+  lang={lang}
+  description="Meet the Bridge Builders team and learn about our background and experience."
+>
+  <Header lang={lang} path={path} />
+
+  <main class="mx-auto max-w-5xl px-4 py-6">
+    <h1 class="text-4xl font-semibold tracking-tight">Staff</h1>
+    <p class="mt-3 text-[rgb(var(--muted))]">
+      Meet the people behind Bridge Builders. We’re here to support Third Culture Kids (TCKs) and the adults around
+      them through community, learning, and practical resources.
+    </p>
+
+    <!-- Profile -->
+    <section aria-labelledby="profile" class="mt-10 border-t border-[rgb(var(--border))] pt-12">
+      <h2 id="profile" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">Team member</h2>
+
+      <div class="mt-8 flex flex-col gap-8 md:flex-row md:items-start">
+        <figure class="w-full md:w-72 md:flex-none">
+          <!-- Use a square headshot photo (see recommended sizes in comments) -->
+          <img
+            src="/images/staff/ai-vander-meulen.jpg"
+            alt="Portrait of Ai Vander Meulen"
+            width="560"
+            height="560"
+            class="aspect-square w-full rounded-[var(--radius)] border border-[rgb(var(--border))] object-cover shadow-[var(--shadow)]"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <div class="mt-5 space-y-3">
+            <h4 class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">At a glance</h4>
+            <ul class="flex flex-wrap gap-2" aria-label="At a glance">
+              <li>
+                <span
+                  class="inline-flex items-center rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--surface-2))] px-3 py-1 text-sm text-[rgb(var(--fg))]"
+                >
+                  Founder / Program Lead
+                </span>
+              </li>
+              <li>
+                <span
+                  class="inline-flex items-center rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--surface-2))] px-3 py-1 text-sm text-[rgb(var(--fg))]"
+                >
+                  Tokyo, Japan
+                </span>
+              </li>
+            </ul>
+          </div>
+        </figure>
+
+        <div class="min-w-0 flex-1 space-y-6">
+          <h3 class="text-2xl font-semibold tracking-tight text-[rgb(var(--fg))]">Ai Vander Meulen</h3>
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            Ai lives in Japan with her American husband. She was born and raised in Japan and has not lived overseas,
+            but even growing up in a small town in Ibaraki, some of her closest childhood friends were from Taiwan and
+            Germany.
+          </p>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            From an early age, watching friends navigate cultural differences made the challenges of living in Japan
+            feel close and real. Later, through her work with hi-b.a., she spent time with missionary kids and TCK
+            youth—seeing firsthand what it can be like to live with your identity pulled between cultures.
+          </p>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            Now, in daily life with a spouse from a different cultural background, she is often invited to revisit what
+            she once assumed was “normal” and ask, “Why?” She’s grateful that each question has broadened her
+            perspective and opened up new ways of seeing.
+          </p>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            Rather than deciding which side is “right,” she keeps returning to what truly matters and how she wants to
+            live. Through these experiences, she felt called to walk alongside young people growing up between
+            cultures—and that desire is what led her to begin this work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section aria-labelledby="timeline" class="mt-14 border-t border-[rgb(var(--border))] pt-12">
+      <h2 id="timeline" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">Work history</h2>
+
+      <ol class="mt-8 space-y-6">
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2000</span>
+            Graduated from <a href="https://jc.rikkyojogakuin.ac.jp/" target="_blank" rel="noopener noreferrer" title="Rikkyo Jogakuin Junior College official website" aria-label="Rikkyo Jogakuin Junior College official website (opens in a new tab)" class="text-[rgb(var(--link))] underline underline-offset-2 decoration-[rgb(var(--border))] hover:decoration-[rgb(var(--muted))]">Rikkyo Jogakuin Junior College</a> (Early Childhood Education).
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2001</span>
+            Completed advanced studies in early childhood education at Rikkyo Jogakuin Junior College.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2001–2006</span>
+            Worked as a kindergarten teacher.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2007</span>
+            Enrolled at <a href="https://seikei-seminary.org/" target="_blank" rel="noopener noreferrer" title="Seikei Theological Seminary official website" aria-label="Seikei Theological Seminary official website (opens in a new tab)" class="text-[rgb(var(--link))] underline underline-offset-2 decoration-[rgb(var(--border))] hover:decoration-[rgb(var(--muted))]">Seikei Theological Seminary</a>.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2007</span>
+            Began serving as a supporting staff member with <a href="https://www.hi-ba.com/" target="_blank" rel="noopener noreferrer" title="hi-b.a. official website" aria-label="hi-b.a. official website (opens in a new tab)" class="text-[rgb(var(--link))] underline underline-offset-2 decoration-[rgb(var(--border))] hover:decoration-[rgb(var(--muted))]">hi-b.a.</a> (High School Bible Association).
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2011</span>
+            Became the staff member responsible for international gatherings at hi-b.a., and began serving in TCK ministry.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2014</span>
+            Graduated from Seikei Theological Seminary.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2014</span>
+            Joined hi-b.a. as a full-time staff member.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2018</span>
+            Transitioned to a supporting staff role with hi-b.a.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2022</span>
+            Concluded work with hi-b.a.
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span
+            class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm"
+            aria-hidden="true"></span>
+          <div
+            class="absolute left-[5px] top-5 -bottom-6 z-0 w-px"
+            style="background: linear-gradient(to bottom, rgb(var(--border)), rgb(var(--border) / 0));"
+            aria-hidden="true"
+          >
+          </div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2024</span>
+            Began focused work supporting Third Culture Kids.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CTA -->
+    <section aria-labelledby="join" class="mt-20 border-t border-[rgb(var(--border))] pt-12">
+      <Card>
+        <h2 id="join" class="text-2xl font-semibold tracking-tight text-[rgb(var(--fg))]">
+          Interested in working with us?
+        </h2>
+        <p class="mt-2 text-[rgb(var(--muted))]">
+          If you’re interested in supporting Bridge Builders—through collaboration, volunteering, or future staff roles—
+          we’d love to hear from you.
+        </p>
+        <div class="mt-6">
+          <Button href="/en/contact" variant="primary">Contact us</Button>
+        </div>
+      </Card>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

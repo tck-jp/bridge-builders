@@ -1,0 +1,243 @@
+
+
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Card from "../../components/ui/Card.astro";
+import Button from "../../components/ui/Button.astro";
+
+const lang = "ja";
+const path = "/staff";
+---
+
+<BaseLayout title="Bridge Builders | スタッフ" lang={lang} description="Bridge Buildersのスタッフ紹介とこれまでの歩み。">
+  <Header lang={lang} path={path} />
+
+  <main class="mx-auto max-w-5xl px-4 py-6">
+    <h1 class="text-4xl font-semibold tracking-tight">スタッフ</h1>
+    <p class="mt-3 text-[rgb(var(--muted))]">
+      Bridge Buildersを支えるスタッフをご紹介します。TCK（サードカルチャーキッズ）と、その周りにいる保護者・教育関係者・地域の皆さまに向けて、
+      コミュニティと学び、実践的なリソースを届けます。
+    </p>
+
+    <!-- Profile -->
+    <section aria-labelledby="profile" class="mt-10 border-t border-[rgb(var(--border))] pt-12">
+      <h2 id="profile" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">メンバー</h2>
+
+      <div class="mt-8 flex flex-col gap-8 md:flex-row md:items-start">
+        <figure class="w-full md:w-72 md:flex-none">
+          <img
+            src="/images/staff/ai-vander-meulen.jpg"
+            alt="ばんだーみゅーれんのプロフィール写真"
+            width="560"
+            height="560"
+            class="aspect-square w-full rounded-[var(--radius)] border border-[rgb(var(--border))] object-cover shadow-[var(--shadow)]"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <div class="mt-5 space-y-3">
+            <h4 class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">At a glance</h4>
+            <ul class="flex flex-wrap gap-2" aria-label="概要">
+              <li>
+                <span
+                  class="inline-flex items-center rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--surface-2))] px-3 py-1 text-sm text-[rgb(var(--fg))]"
+                >
+                  代表／プログラム担当
+                </span>
+              </li>
+              <li>
+                <span
+                  class="inline-flex items-center rounded-full border border-[rgb(var(--border))] bg-[rgb(var(--surface-2))] px-3 py-1 text-sm text-[rgb(var(--fg))]"
+                >
+                  東京（日本）
+                </span>
+              </li>
+            </ul>
+          </div>
+        </figure>
+
+        <div class="min-w-0 flex-1 space-y-6">
+          <h3 class="text-2xl font-semibold tracking-tight text-[rgb(var(--fg))]">ばんだーみゅーれん</h3>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">現在、アメリカ人の夫と二人で暮らしています。私は海外で暮らした経験はなく、日本生まれ、日本育ちです。</p>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            しかし、茨城の小さな町で育ちながら、幼馴染には台湾人やドイツ人がいました。幼い頃から、文化の違いの中で生きる友人たちの姿を通して、
+            日本で生きることの難しさを、どこか身近に感じてきました。
+          </p>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            また、hi-b.a.での働きを通して、宣教師の子どもやTCKの若者たちと関わる中で、文化の間で揺れながら生きる姿に触れてきました。
+          </p>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            今、異なる文化を背景に持つ夫と生活する中で、これまで「当たり前」と思っていたことに対して、「どうして？」と問い直す機会が多く与えられています。
+            その一つひとつが、私自身の視野を広げ、新しい見方を与えてくれていることに感謝しています。
+          </p>
+
+          <p class="mt-0 text-[rgb(var(--muted))]">
+            どちらかが正しいのではなく、何が大切なのか、どう生きていきたいのか。その問いに向き合いながら、日々を歩んでいます。
+            こうしたこれまでの経験を通して、文化の間で揺れながら生きる若者たちと共に歩みたいと願い、この働きを始めました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section aria-labelledby="timeline" class="mt-14 border-t border-[rgb(var(--border))] pt-12">
+      <h2 id="timeline" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">これまでの歩み</h2>
+
+      <ol class="mt-8 space-y-6">
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2000年</span>
+            <a
+              href="https://jc.rikkyojogakuin.ac.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="立教女学院短期大学 公式サイト"
+              aria-label="立教女学院短期大学 公式サイト（新しいタブで開きます）"
+              class="text-[rgb(var(--link))] underline underline-offset-2 decoration-[rgb(var(--border))] hover:decoration-[rgb(var(--muted))]"
+            >
+              立教女学院短期大学
+            </a>
+            幼稚教育科 卒業
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2001年</span>
+            立教女学院短期大学 幼児教育専門科 修了
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2001年〜2006年</span>
+            幼稚園教諭として勤務
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2007年</span>
+            <a
+              href="https://seikei-seminary.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="聖契神学校 公式サイト"
+              aria-label="聖契神学校 公式サイト（新しいタブで開きます）"
+              class="text-[rgb(var(--link))] underline underline-offset-2 decoration-[rgb(var(--border))] hover:decoration-[rgb(var(--muted))]"
+            >
+              聖契神学校
+            </a>
+            入学
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2007年</span>
+            <a
+              href="https://www.hi-ba.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="hi-b.a. 高校生聖書伝道協会 公式サイト"
+              aria-label="hi-b.a. 高校生聖書伝道協会 公式サイト（新しいタブで開きます）"
+              class="text-[rgb(var(--link))] underline underline-offset-2 decoration-[rgb(var(--border))] hover:decoration-[rgb(var(--muted))]"
+            >
+              hi-b.a.
+            </a>
+            （高校生聖書伝道協会）協力スタッフとして活動開始
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2011年</span>
+            hi-b.a.にて国際集会担当スタッフとなり、TCKミニストリーに携わる
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2014年</span>
+            聖契神学校 卒業
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2014年</span>
+            hi-b.a. フルタイムスタッフとして勤務
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2018年</span>
+            hi-b.a. 協力スタッフへ
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div class="absolute left-[5px] top-5 -bottom-6 z-0 w-px bg-[rgb(var(--border))]" aria-hidden="true"></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2022年</span>
+            hi-b.a. 退職
+          </p>
+        </li>
+
+        <li class="relative pl-8">
+          <span class="absolute left-0 top-1.5 z-10 h-3 w-3 rounded-full bg-[rgb(var(--accent))] shadow-sm" aria-hidden="true"></span>
+          <div
+            class="absolute left-[5px] top-5 -bottom-6 z-0 w-px"
+            style="background: linear-gradient(to bottom, rgb(var(--border)), rgb(var(--border) / 0));"
+            aria-hidden="true"
+          ></div>
+          <p class="text-sm leading-snug text-[rgb(var(--muted))]">
+            <span class="mr-3 font-semibold text-[rgb(var(--fg))]">2024年</span>
+            Third Culture Kidsへの働きを開始
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CTA -->
+    <section aria-labelledby="join" class="mt-20 border-t border-[rgb(var(--border))] pt-12">
+      <Card>
+        <h2 id="join" class="text-2xl font-semibold tracking-tight text-[rgb(var(--fg))]">Bridge Buildersと関わりたい方へ</h2>
+        <p class="mt-2 text-[rgb(var(--muted))]">
+          協力やボランティア、今後のスタッフ参加などに関心のある方は、ぜひお気軽にご連絡ください。
+        </p>
+        <div class="mt-6">
+          <Button href="/ja/contact" variant="primary">お問い合わせ</Button>
+        </div>
+      </Card>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

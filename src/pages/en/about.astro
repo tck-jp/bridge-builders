@@ -12,23 +12,165 @@ const path = "/about";
   <Header lang={lang} path={path} />
 
   <main class="mx-auto max-w-5xl px-4 py-6">
-    <h1 class="text-3xl font-semibold tracking-tight">About</h1>
-    <p class="mt-3 text-[rgb(var(--muted))]">
-      Bridge Builders supports Third Culture Kids (TCKs) through community, training, and resources.
-    </p>
+    <h1 class="text-4xl font-semibold tracking-tight">About Bridge Builders</h1>
 
-    <div class="mt-6 grid gap-4 md:grid-cols-2">
-      <Card>
-        <h2 class="text-lg font-semibold">What we do</h2>
-        <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-          Workshops, seminars, and resources for families, schools, and organizations.
+    <nav aria-label="In-page links" class="bb-quicklinks-bar">
+      <ul class="flex flex-wrap gap-2">
+        <li><a class="bb-quicklink" href="#vision">Vision</a></li>
+        <li><a class="bb-quicklink" href="#about">TCKs and us</a></li>
+        <li><a class="bb-quicklink" href="#what-we-do">What we do</a></li>
+        <li><a class="bb-quicklink" href="#who-its-for">Who it’s for</a></li>
+      </ul>
+    </nav>
+
+    <div class="mt-10 space-y-20 text-base text-[rgb(var(--muted))]">
+      <!-- Vision -->
+      <section aria-labelledby="vision" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="vision" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">Vision</h2>
+        <div class="mt-4">
+          <p>
+            A society where diverse cultures and values are respected—and young people raised across cultures can turn
+            difference into connection, not division.
+          </p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section aria-labelledby="about" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="about" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">TCKs and us</h2>
+        <p class="mt-4 text-sm text-[rgb(var(--muted))]">
+          An overview of common TCK experiences, what can be challenging in Japan, and the values that guide our work.
         </p>
-      </Card>
 
-      <Card>
-        <h2 class="text-lg font-semibold">Who it’s for</h2>
-        <p class="mt-2 text-sm text-[rgb(var(--muted))]">TCKs, parents, educators, and community leaders.</p>
-      </Card>
+        <div class="mt-8 space-y-10">
+          <section aria-labelledby="tck" class="space-y-3">
+            <h3 id="tck" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">What is a TCK?</h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                When a parent’s work or circumstances lead a family to live outside the parent’s home country, children
+                often grow up between cultures—shaped by both their home life and the country where they are raised.
+                These kids are often called Third Culture Kids (TCKs). Many TCKs adapt well to different environments,
+                yet still get seen as an “outsider” in more than one place. Over time, that can create a sense of not
+                fully belonging—or feeling “not quite enough” in either culture.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="japan" class="space-y-3">
+            <h3 id="japan" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              What can be especially hard in Japan
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                In Japan, communication often depends not only on language but also on context. For TCK youth, that can
+                mean facing invisible barriers—hard to name, but still deeply felt.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="approach" class="space-y-3">
+            <h3 id="approach" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">What we value</h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                Bridge Builders focuses especially on teens. These are formative years when identity is still taking
+                shape. When roots and belonging feel unclear—or when someone is made to feel like they don’t fully fit
+                anywhere—it can become a heavier struggle. We want to be a steady, walking-with-you presence. Rather
+                than asking young people to choose one side, we honor each culture and support them as they build new
+                connections.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- What we do -->
+      <section aria-labelledby="what-we-do" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="what-we-do" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">What we do</h2>
+        <p class="mt-3 text-sm text-[rgb(var(--muted))]">
+          Through everyday relationships, we build connection through safe conversation and shared experiences.
+        </p>
+
+        <div class="mt-8 space-y-10">
+          <section aria-labelledby="dialogue" class="space-y-3">
+            <h3 id="dialogue" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              We make space for dialogue
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                When people with different cultures and languages come together, differences naturally show up. We value
+                respectful, peer-to-peer dialogue—across age, gender, beliefs, and background—so people can understand
+                one another. Sometimes languages get mixed, or feelings are hard to put into words. We treat those
+                moments as part of communication too, and we work to create a space where it feels safe to speak.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="nostalgia" class="space-y-3">
+            <h3 id="nostalgia" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              We value what feels familiar
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                A snack you grew up with, a favorite book, the comfort of a certain kind of space—small things can bring
+                back a sense of home. We want to make room for those “familiar” experiences, because they connect to
+                roots and safety.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="culture" class="space-y-3">
+            <h3 id="culture" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              We learn each other’s cultures
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                We often learn through food. We enjoy Japan’s rich food culture together and share what makes it
+                meaningful—while also learning about food cultures from around the world. By teaching and learning from
+                each other, we deepen understanding across cultures.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="parents" class="space-y-3">
+            <h3 id="parents" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">Support for parents</h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                Life overseas can bring major change and pressure for parents too. Leaving a familiar environment can
+                make everyday tasks harder than they used to be. And raising teens often comes with uncertainty. We
+                listen and think together with parents about daily challenges and parenting questions.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Who it's for -->
+      <section aria-labelledby="who-its-for" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="who-its-for" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">Who it’s for</h2>
+        <div class="mt-4">
+          <p>
+            Teen TCKs living in Japan—Japanese youth raised overseas and non-Japanese youth raised in Japan—and the
+            adults around them.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div class="mt-16 border-t border-[rgb(var(--border))] pt-12">
+      <div class="grid gap-6 md:grid-cols-2">
+        <Card>
+          <h3 class="text-lg font-semibold">Mission</h3>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+            We support Third Culture Kids in putting their story into words, building an identity that feels true to
+            them, and growing meaningful relationships.
+          </p>
+        </Card>
+
+        <Card>
+          <h3 class="text-lg font-semibold">Who we serve</h3>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">TCKs, parents, educators, and community supporters.</p>
+        </Card>
+      </div>
     </div>
   </main>
 
