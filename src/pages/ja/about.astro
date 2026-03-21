@@ -12,31 +12,154 @@ const path = "/about";
   <Header lang={lang} path={path} />
 
   <main class="mx-auto max-w-5xl px-4 py-6">
-    <h1 class="text-3xl font-semibold tracking-tight">私たちについて</h1>
-    <div class="mt-3 space-y-4 text-base text-[rgb(var(--muted))]">
-      <p>
-        Bridge Builders は、第三文化の子ども（TCK）と、その家族・教育者・支援者が、つながり、学び、成長できる場をつくるためのNPOです。
-      </p>
-      <p>
-        多文化環境で育つ体験を前向きな力に変え、安心して属せるコミュニティを育みます。
-      </p>
+    <h1 class="text-4xl font-semibold tracking-tight">私たちについて</h1>
+
+    <p class="mt-6 text-sm font-medium text-[rgb(var(--muted))]">このページの内容</p>
+
+    <nav aria-label="このページ内リンク" class="bb-quicklinks-bar">
+      <ul class="flex flex-wrap gap-2">
+        <li><a class="bb-quicklink" href="#vision">ビジョン</a></li>
+        <li><a class="bb-quicklink" href="#about">TCKと私たち</a></li>
+        <li><a class="bb-quicklink" href="#what-we-do">私たちの活動</a></li>
+        <li><a class="bb-quicklink" href="#who-its-for">対象となる方</a></li>
+      </ul>
+    </nav>
+
+    <div class="mt-10 space-y-20 text-base text-[rgb(var(--muted))]">
+      <!-- Vision -->
+      <section aria-labelledby="vision" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="vision" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">ビジョン</h2>
+        <div class="mt-4">
+          <p>
+            多様な文化や価値観が尊重され、複数の文化の中で育った若者たちが、違いを分断ではなくつながりへと変えていく社会。
+          </p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section aria-labelledby="about" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="about" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">TCKと私たち</h2>
+        <p class="mt-4 text-sm text-[rgb(var(--muted))]">
+          TCKが抱えやすい経験と、日本で起こりやすいこと、そして私たちが大切にしたい姿勢をまとめています。
+        </p>
+
+        <div class="mt-8 space-y-10">
+          <section aria-labelledby="tck" class="space-y-3">
+            <h3 id="tck" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">TCKとは</h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                親の仕事などの理由で、親の母国とは異なる国で育つ子どもたちは、家庭の文化と育った国の文化、複数の文化の狭間のなかで成長します。
+                そのような背景を持つ子どもたちは、「Third Culture
+                Kids（TCK）」と呼ばれます。TCKは、親の国にも育った国にも馴染む力を持ちながらも、どちらの社会においても「外国人」として見られることがあります。
+                その中で、どこか足りなさや不自由さを感じることも少なくありません。
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="japan" class="space-y-3">
+            <h3 id="japan" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              日本で起こりやすいこと
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                特に日本のように、言語だけでなくコンテキストを大切にする文化においては、目に見えにくい壁に直面することもあります。
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="approach" class="space-y-3">
+            <h3 id="approach" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              Bridge Buildersが大切にすること
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                Bridge
+                Buildersでは、そのような背景を持つ子どもたちの中でも、特に10代の思春期にある若者たちに焦点を当てています。思春期は、自分自身のアイデンティティを形づくっていく大切な時期です。その時期に、自分のルーツや所属が曖昧に感じられたり、「どちらにも足りていない」と思わされる経験は、より大きな葛藤となることがあります。私たちは、そのような若者たちにとっての「共に歩む存在」でありたいと願っています。
+                どちらか一方に合わせるのではなく、それぞれの文化を尊重しながら、新しいつながりを生み出していく歩みを支えていきます。
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- What we do -->
+      <section aria-labelledby="what-we-do" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="what-we-do" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">私たちの活動</h2>
+        <p class="mt-3 text-sm text-[rgb(var(--muted))]">
+          日々の関わりの中で、安心できる対話と体験を通してつながりを育みます。
+        </p>
+
+        <div class="mt-8 space-y-10">
+          <section aria-labelledby="dialogue" class="space-y-3">
+            <h3 id="dialogue" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">対話を大切にする</h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                複数の文化や言語を背景に持つ人々が出会うとき、そこにはさまざまな違いが存在します。私たちは、立場や年齢、性別、宗教の違いを超えて、対等に向き合い、互いを理解しようとする対話を大切にしています。複数の言語が混ざり合ったり、うまく言葉にできなかったりすることもありますが、そのような表現も大切にしながら、安心して話せる場をつくっていきます。
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="nostalgia" class="space-y-3">
+            <h3 id="nostalgia" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              「懐かしい」を大切にする
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                子どもの頃に親しんだお菓子や本、ふとした空間の心地よさ。
+                そうした「懐かしい」と感じるものは、自分のルーツや安心感につながっています。そのような空間、体験を大切にしていきます。
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="culture" class="space-y-3">
+            <h3 id="culture" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">互いの文化を知る</h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                私たちは、主に食文化を通して、互いの文化を知る機会を大切にしています。
+                日本の豊かな食文化を共に味わい、その魅力を分かち合うとともに、海外の食文化についても学び合います。互いに教え、教わる関係の中で、文化への理解を深めていきます。
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="parents" class="space-y-3">
+            <h3 id="parents" class="text-lg font-semibold tracking-tight text-[rgb(var(--fg))]">
+              親御さんへのサポート
+            </h3>
+            <div class="mt-4 space-y-4">
+              <p>
+                海外での生活は、親にとっても大きな変化と負担を伴います。
+                慣れ親しんだ環境を離れ、これまで「当たり前」にできていたことが難しくなることも少なくありません。また、思春期の子どもを育てる中で、不安や戸惑いを感じることもあると思います。
+                私たちは、そのような親御さんの声に耳を傾け、子育てや日々の悩みについて共に考えていきます。
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Who it's for -->
+      <section aria-labelledby="who-its-for" class="border-t border-[rgb(var(--border))] pt-12">
+        <h2 id="who-its-for" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">対象となる方</h2>
+        <div class="mt-4">
+          <p>日本に住む10代の海外育ちの日本人、または日本に育つ外国人の子どもたちとその周りにいる大人たちのため</p>
+        </div>
+      </section>
     </div>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-2">
-      <Card>
-        <h2 class="text-lg font-semibold">ミッション</h2>
-        <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-          第三文化の子どもたちが、自分のストーリーを言葉にし、自分らしいアイデンティティを築き、
-          大切な人間関係を育めるよう支援します。
-        </p>
-      </Card>
+    <div class="mt-16 border-t border-[rgb(var(--border))] pt-12">
+      <div class="grid gap-6 md:grid-cols-2">
+        <Card>
+          <h3 class="text-lg font-semibold">ミッション</h3>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
+            第三文化の子どもたちが、自分のストーリーを言葉にし、自分らしいアイデンティティを築き、
+            大切な人間関係を育めるよう支援します。
+          </p>
+        </Card>
 
-      <Card>
-        <h2 class="text-lg font-semibold">対象</h2>
-        <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-          TCK本人、保護者、教育者、そして地域の支援者の皆さま。
-        </p>
-      </Card>
+        <Card>
+          <h3 class="text-lg font-semibold">対象</h3>
+          <p class="mt-2 text-sm text-[rgb(var(--muted))]">TCK本人、保護者、教育者、そして地域の支援者の皆さま。</p>
+        </Card>
+      </div>
     </div>
   </main>
 

@@ -1,6 +1,7 @@
 ---
 const { lang = "en" } = Astro.props;
-const text = lang === "en" ? "© Bridge Builders" : "© Bridge Builders";
+const year = new Date().getFullYear();
+const text = lang === "en" ? `© ${year} Bridge Builders` : `© ${year} Bridge Builders`;
 ---
 
 <footer class="border-t border-[rgb(var(--border))] bg-[rgb(var(--surface))]">

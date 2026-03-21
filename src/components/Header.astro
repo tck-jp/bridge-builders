@@ -6,12 +6,12 @@ const { lang = "en", path = "/" } = Astro.props;
 
 const t =
   lang === "en"
-    ? { home: "Home", about: "About", resources: "Resources", contact: "Contact" }
-    : { home: "ホーム", about: "私たちについて", resources: "リソース", contact: "お問い合わせ" };
+    ? { home: "Home", about: "About", staff: "Staff", contact: "Contact" }
+    : { home: "ホーム", about: "私たちについて", staff: "スタッフ", contact: "お問い合わせ" };
 
 const base = `/${lang}`;
 ---
-<header class="border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
+<header class="sticky top-0 z-50 border-b border-[rgb(var(--border))] bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
   <div class="mx-auto flex max-w-5xl items-center justify-between p-4">
     <a href={`${base}/`} class="inline-flex items-center" aria-label="Bridge Builders">
       <img
@@ -26,7 +26,7 @@ const base = `/${lang}`;
     </a>
 
     <div class="flex items-center gap-4">
-      <nav class="hidden items-center gap-5 text-sm md:flex">
+      <nav class="hidden items-center gap-5 text-base md:flex">
         <a
           class="text-[rgb(var(--fg))] hover:text-[rgb(var(--muted))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
           href={`${base}/`}
@@ -41,9 +41,9 @@ const base = `/${lang}`;
         </a>
         <a
           class="text-[rgb(var(--fg))] hover:text-[rgb(var(--muted))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
-          href={`${base}/resources`}
+          href={`${base}/staff`}
         >
-          {t.resources}
+          {t.staff}
         </a>
         <a
           class="text-[rgb(var(--fg))] hover:text-[rgb(var(--muted))] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg))]"
