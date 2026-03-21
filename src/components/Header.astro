@@ -100,7 +100,7 @@ const base = `/${lang}`;
       tabindex="-1"
     >
       <div class="flex items-center justify-between">
-        <p class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">Menu</p>
+        <p class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">{lang === "en" ? "Menu" : "メニュー"}</p>
         <button
           type="button"
           class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--fg))] transition hover:bg-[rgb(var(--surface-2))] focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--focus))]"
@@ -123,13 +123,13 @@ const base = `/${lang}`;
 
       <div class="mt-8 border-t border-[rgb(var(--border))] pt-6">
         <div class="space-y-3">
-          <p class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">Settings</p>
+          <p class="text-sm font-semibold uppercase tracking-wide text-[rgb(var(--muted))]">{lang === "en" ? "Settings" : "設定"}</p>
           <div class="flex items-center justify-between gap-3">
-            <span class="text-sm text-[rgb(var(--muted))]">Language</span>
+            <span class="text-sm text-[rgb(var(--muted))]">{lang === "en" ? "Language" : "言語"}</span>
             <LanguageToggle lang={lang} path={path} />
           </div>
           <div class="flex items-center justify-between gap-3">
-            <span class="text-sm text-[rgb(var(--muted))]">Theme</span>
+            <span class="text-sm text-[rgb(var(--muted))]">{lang === "en" ? "Theme" : "テーマ"}</span>
             <ThemeToggle label={lang === "en" ? "Toggle theme" : "テーマ切替"} />
           </div>
         </div>
