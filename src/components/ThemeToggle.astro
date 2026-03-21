@@ -4,6 +4,7 @@
  * Checkbox + stacked icons with rotate/opacity micro-animation.
  * Uses html.dark + localStorage("theme") = "dark"|"light"
  */
+import { randomUUID } from "node:crypto";
 const {
   label = "Toggle theme",
   class: className = "",
@@ -15,7 +16,7 @@ const {
 
 // If you only ever render one toggle, a fixed id is fine.
 // If you might render more than one, pass in an `id` prop.
-const id = Astro.props.id ?? "theme-switch";
+const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
 ---
 
 <div class={["theme-switch", className].filter(Boolean).join(" ")}>
@@ -72,13 +73,33 @@ const id = Astro.props.id ?? "theme-switch";
     const input = document.getElementById(id);
     if (!(input instanceof HTMLInputElement)) return;
 
+    function isDark() {
+      return document.documentElement.classList.contains("dark");
+    }
+
+    function syncFromDom() {
+      // Keep the checkbox (and therefore the icon animation state) in sync
+      input.checked = isDark();
+    }
+
     // Initialize checkbox from current DOM state (your BaseLayout sets `.dark` early)
-    input.checked = document.documentElement.classList.contains("dark");
+    syncFromDom();
 
     input.addEventListener("change", () => {
       const checked = input.checked;
       document.documentElement.classList.toggle("dark", checked);
       localStorage.setItem("theme", checked ? "dark" : "light");
+
+      // Notify other toggle instances to update their checked state (and animate)
+      window.dispatchEvent(new Event("bb-theme-change"));
+    });
+
+    // Sync when another ThemeToggle instance changes the theme
+    window.addEventListener("bb-theme-change", syncFromDom);
+
+    // Sync when theme changes in another tab
+    window.addEventListener("storage", (e) => {
+      if (e.key === "theme") syncFromDom();
     });
   })();
 </script>
