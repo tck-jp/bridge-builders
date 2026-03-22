@@ -1,17 +1,19 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Button from "../../components/ui/Button.astro";
-import Card from "../../components/ui/Card.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+
 const lang = "en";
 const path = "/";
 ---
 
 <BaseLayout
-  title="Bridge Builders | Home"
+  title="Bridge Builders | Support for Third Culture Kids (TCKs) in Japan"
   lang={lang}
-  description="Bridge Builders is a nonprofit supporting Third Culture Kids (TCKs) through community, training, and resources."
+  description="Bridge Builders supports Third Culture Kids (TCKs) in Japan through community, training, and practical resources for teens, parents, and educators."
+  canonicalPath="/en/"
+  ogImage="/og/en-home.jpg"
 >
   <Header lang={lang} path={path} />
 
@@ -52,5 +54,6 @@ const path = "/";
       </div>
     </section>
   </main>
+
   <Footer lang={lang} />
 </BaseLayout>

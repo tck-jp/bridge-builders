@@ -30,7 +30,13 @@ const resources = [
 ];
 ---
 
-<BaseLayout lang={lang}>
+<BaseLayout
+  title="リソース | Bridge Builders"
+  lang={lang}
+  description="TCK（サードカルチャーキッズ）支援のための研修・セミナー・ワークショップの案内と、保護者・教育関係者向けの実践的なリソースを掲載しています。"
+  canonicalPath="/ja/resources"
+  ogImage="/og/og-default.jpg"
+>
   <Header lang={lang} path={path} />
 
   <main class="mx-auto max-w-5xl px-4 py-6">
@@ -84,5 +90,5 @@ const resources = [
     </div>
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>
