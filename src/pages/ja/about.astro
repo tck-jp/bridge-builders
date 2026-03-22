@@ -8,7 +8,13 @@ const lang = "ja";
 const path = "/about";
 ---
 
-<BaseLayout lang={lang}>
+<BaseLayout
+  title="私たちについて | Bridge Builders"
+  lang={lang}
+  description="Bridge Buildersが大切にしていること、TCK（サードカルチャーキッズ）への支援、対象となる方についてご紹介します。"
+  canonicalPath="/ja/about"
+  ogImage="/og/og-default.jpg"
+>
   <Header lang={lang} path={path} />
 
   <main class="mx-auto max-w-5xl px-4 py-6">
@@ -137,31 +143,14 @@ const path = "/about";
       </section>
 
       <!-- Who it's for -->
-      <section aria-labelledby="who-its-for" class="border-t border-[rgb(var(--border))] pt-12">
+      <section aria-labelledby="who-its-for" class="border-t border-[rgb(var(--border))] pt-12 pb-20">
         <h2 id="who-its-for" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">対象となる方</h2>
         <div class="mt-4">
           <p>日本に住む10代の海外育ちの日本人、または日本に育つ外国人の子どもたちとその周りにいる大人たちのため</p>
         </div>
       </section>
     </div>
-
-    <div class="mt-16 border-t border-[rgb(var(--border))] pt-12">
-      <div class="grid gap-6 md:grid-cols-2">
-        <Card>
-          <h3 class="text-lg font-semibold">ミッション</h3>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-            第三文化の子どもたちが、自分のストーリーを言葉にし、自分らしいアイデンティティを築き、
-            大切な人間関係を育めるよう支援します。
-          </p>
-        </Card>
-
-        <Card>
-          <h3 class="text-lg font-semibold">対象</h3>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">TCK本人、保護者、教育者、そして地域の支援者の皆さま。</p>
-        </Card>
-      </div>
-    </div>
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>

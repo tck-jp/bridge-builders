@@ -9,7 +9,14 @@ const {
   title = "Bridge Builders",
   lang = "en",
   description = "Bridge Builders supports Third Culture Kids (TCKs) through community, training, and resources.",
+  canonicalPath = "",
+  ogImage = "/og/og-default.jpg",
+  ogType = "website",
 } = Astro.props;
+
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const canonicalUrl = site && canonicalPath ? `${site}${canonicalPath}` : canonicalPath || "";
+const ogImageUrl = site && ogImage?.startsWith("/") ? `${site}${ogImage}` : ogImage;
 ---
 
 <!doctype html>
@@ -18,6 +25,24 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+
+    {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Bridge Builders" />
+    <meta property="og:locale" content={lang === "ja" ? "ja_JP" : "en_US"} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={title} />
+    {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={title} />
+
     <title>{title}</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

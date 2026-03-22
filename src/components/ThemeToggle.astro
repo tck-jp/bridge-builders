@@ -4,7 +4,6 @@
  * Checkbox + stacked icons with rotate/opacity micro-animation.
  * Uses html.dark + localStorage("theme") = "dark"|"light"
  */
-import { randomUUID } from "node:crypto";
 const {
   label = "Toggle theme",
   class: className = "",
@@ -16,10 +15,10 @@ const {
 
 // If you only ever render one toggle, a fixed id is fine.
 // If you might render more than one, pass in an `id` prop.
-const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
+const id = Astro.props.id ?? "theme-switch";
 ---
 
-<div class={["theme-switch", className].filter(Boolean).join(" ")}>
+<div class={[("theme-switch"), className].filter(Boolean).join(" ")}>
   <input type="checkbox" id={id} class="theme-switch__input" />
   <label class="theme-switch__icons" for={id} aria-label={label} title={label}>
     <svg
@@ -68,7 +67,6 @@ const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
 </div>
 
 <script define:vars={{ id }}>
-  // Self-contained: no dependency on a global toggle function.
   (function () {
     const input = document.getElementById(id);
     if (!(input instanceof HTMLInputElement)) return;
@@ -78,26 +76,20 @@ const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
     }
 
     function syncFromDom() {
-      // Keep the checkbox (and therefore the icon animation state) in sync
       input.checked = isDark();
     }
 
-    // Initialize checkbox from current DOM state (your BaseLayout sets `.dark` early)
     syncFromDom();
 
     input.addEventListener("change", () => {
       const checked = input.checked;
       document.documentElement.classList.toggle("dark", checked);
       localStorage.setItem("theme", checked ? "dark" : "light");
-
-      // Notify other toggle instances to update their checked state (and animate)
       window.dispatchEvent(new Event("bb-theme-change"));
     });
 
-    // Sync when another ThemeToggle instance changes the theme
     window.addEventListener("bb-theme-change", syncFromDom);
 
-    // Sync when theme changes in another tab
     window.addEventListener("storage", (e) => {
       if (e.key === "theme") syncFromDom();
     });
@@ -105,7 +97,6 @@ const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
 </script>
 
 <style>
-  /* Hide native checkbox */
   .theme-switch__input {
     position: absolute;
     opacity: 0;
@@ -118,7 +109,6 @@ const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
     justify-content: center;
   }
 
-  /* Icon stack container */
   .theme-switch__icons {
     display: inline-block;
     position: relative;
@@ -138,7 +128,6 @@ const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
       opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  /* Default state (unchecked): moon visible */
   .theme-switch__moon {
     transform: rotate(10deg);
     opacity: 1;
@@ -149,7 +138,6 @@ const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
     opacity: 0;
   }
 
-  /* Checked state: sun visible */
   .theme-switch__input:checked + .theme-switch__icons .theme-switch__moon {
     transform: rotate(250deg);
     opacity: 0;
@@ -160,7 +148,6 @@ const id = Astro.props.id ?? `theme-switch-${randomUUID()}`;
     opacity: 1;
   }
 
-  /* Keyboard focus (optional but recommended) */
   .theme-switch__input:focus-visible + .theme-switch__icons {
     outline: 2px solid rgb(var(--focus) / 0.9);
     outline-offset: 3px;

@@ -8,7 +8,13 @@ const lang = "en";
 const path = "/about";
 ---
 
-<BaseLayout title="About | Bridge Builders" lang={lang}>
+<BaseLayout
+  title="About | Bridge Builders"
+  lang={lang}
+  description="Learn what Bridge Builders does and why we focus on Third Culture Kids (TCKs) in Japan—supporting teens and the adults around them."
+  canonicalPath="/en/about"
+  ogImage="/og/og-default.jpg"
+>
   <Header lang={lang} path={path} />
 
   <main class="mx-auto max-w-5xl px-4 py-6">
@@ -145,7 +151,7 @@ const path = "/about";
       </section>
 
       <!-- Who it's for -->
-      <section aria-labelledby="who-its-for" class="border-t border-[rgb(var(--border))] pt-12">
+      <section aria-labelledby="who-its-for" class="border-t border-[rgb(var(--border))] pt-12 pb-20">
         <h2 id="who-its-for" class="text-3xl font-semibold tracking-tight text-[rgb(var(--fg))]">Who it’s for</h2>
         <div class="mt-4">
           <p>
@@ -154,23 +160,6 @@ const path = "/about";
           </p>
         </div>
       </section>
-    </div>
-
-    <div class="mt-16 border-t border-[rgb(var(--border))] pt-12">
-      <div class="grid gap-6 md:grid-cols-2">
-        <Card>
-          <h3 class="text-lg font-semibold">Mission</h3>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">
-            We support Third Culture Kids in putting their story into words, building an identity that feels true to
-            them, and growing meaningful relationships.
-          </p>
-        </Card>
-
-        <Card>
-          <h3 class="text-lg font-semibold">Who we serve</h3>
-          <p class="mt-2 text-sm text-[rgb(var(--muted))]">TCKs, parents, educators, and community supporters.</p>
-        </Card>
-      </div>
     </div>
   </main>
 
